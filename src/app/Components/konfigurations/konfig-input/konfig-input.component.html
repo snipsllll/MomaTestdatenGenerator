@@ -1,0 +1,10 @@
+<div class="konfig-input">
+  <div class="konfig-input__label">
+    {{viewModel.label}}
+  </div>
+  <input
+    [type]="viewModel.inputType"
+    class="konfig-input__input"
+    [(ngModel)]="value"
+    (ngModelChange)="onValueChanged()">
+</div>

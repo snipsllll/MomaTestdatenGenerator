@@ -1,0 +1,8 @@
+<div *ngFor="let konfigInputViewModel of konfigInputViewModels">
+  <app-konfig-input
+    [viewModel]="konfigInputViewModel"
+    (onValueChange)="konfigInputViewModel.onChange && konfigInputViewModel.onChange($event)">
+  </app-konfig-input>
+</div>
+<p>Text: {{text}}</p>
+<p>Number: {{number}}</p>
