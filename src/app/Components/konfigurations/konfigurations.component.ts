@@ -17,35 +17,103 @@ import { NgForOf } from '@angular/common';
 })
 export class KonfigurationsComponent {
 
-  text: string = '';
-  number: number = 0;
   konfigInputViewModels: KonfigInputViewModel[] = [];
 
   constructor(protected konfigService: KonfigService) {
     this.konfigInputViewModels = this.getKonfigInputViewModelList();
   }
 
-  onTextChange = (newText: string) => {
-    this.text = newText;
+  onAnzahlBuchungenChange = (value: number) => {
+    this.konfigService.anzahlBuchungen = value;
   };
 
-  onNumberChange = (newNumber: number) => {
-    this.number = newNumber;
+  onAnzahlBuchungsKategorienChange = (value: number) => {
+    this.konfigService.anzahlBuchungsKategorien = value;
+  };
+
+  onAnzahlStandardFixkostenEintraegeChange = (value: number) => {
+    this.konfigService.anzahlStandardFixkostenEintraege = value;
+  };
+
+  onAnzahlSparschweinEintraegeChange = (value: number) => {
+    this.konfigService.anzahlSparschweinEintraege = value;
+  };
+
+  onAnzahlWunschlistenEintraegeChange = (value: number) => {
+    this.konfigService.anzahlWunschlistenEintraege = value;
+  };
+
+  onAnzahlManuellerAuswertungsLayoutsChange = (value: number) => {
+    this.konfigService.anzahlManuellerAuswertungsLayouts = value;
+  };
+
+  onAnzahlDiagrammeProAuswertungsLayoutChange = (value: number) => {
+    this.konfigService.anzahlDiagrammeProAuswertungsLayout = value;
+  };
+
+  onAnzahlGeplanteAusgabenKategorienProMonthChange = (value: number) => {
+    this.konfigService.anzahlGeplanteAusgabenKategorienProMonth = value;
+  };
+
+  onAnzahlGeplanteAusgabenBuchungenProMonthChange = (value: number) => {
+    this.konfigService.anzahlGeplanteAusgabenBuchungenProMonth = value;
   };
 
   private getKonfigInputViewModelList(): KonfigInputViewModel[] {
     return [
       {
-        inputType: InputTypes.Text,
-        label: 'Text 1',
-        value: '',
-        onChange: this.onTextChange
+        inputType: InputTypes.Number,
+        label: 'Anz Buchungen:',
+        onChange: this.onAnzahlBuchungenChange,
+        value: this.konfigService.anzahlBuchungen
       },
       {
         inputType: InputTypes.Number,
-        label: 'Number 1',
-        value: 0,
-        onChange: this.onNumberChange
+        label: 'Anz Buchungs-Kategorien:',
+        onChange: this.onAnzahlBuchungsKategorienChange,
+        value: this.konfigService.anzahlBuchungsKategorien
+      },
+      {
+        inputType: InputTypes.Number,
+        label: 'Anz Standard-Fixkosten-Einträge:',
+        onChange: this.onAnzahlStandardFixkostenEintraegeChange,
+        value: this.konfigService.anzahlStandardFixkostenEintraege
+      },
+      {
+        inputType: InputTypes.Number,
+        label: 'Anz Sparschwein-Einträge:',
+        onChange: this.onAnzahlSparschweinEintraegeChange,
+        value: this.konfigService.anzahlSparschweinEintraege
+      },
+      {
+        inputType: InputTypes.Number,
+        label: 'Anz Wunschlisten-Einträge:',
+        onChange: this.onAnzahlWunschlistenEintraegeChange,
+        value: this.konfigService.anzahlWunschlistenEintraege
+      },
+      {
+        inputType: InputTypes.Number,
+        label: 'Anz manueller Auswertungs-Layouts:',
+        onChange: this.onAnzahlManuellerAuswertungsLayoutsChange,
+        value: this.konfigService.anzahlManuellerAuswertungsLayouts
+      },
+      {
+        inputType: InputTypes.Number,
+        label: 'Anz Diagramme pro Auswertungs-Layout:',
+        onChange: this.onAnzahlDiagrammeProAuswertungsLayoutChange,
+        value: this.konfigService.anzahlDiagrammeProAuswertungsLayout
+      },
+      {
+        inputType: InputTypes.Number,
+        label: 'Anz geplanter Ausgaben-Kategorien pro Monat:',
+        onChange: this.onAnzahlGeplanteAusgabenKategorienProMonthChange,
+        value: this.konfigService.anzahlGeplanteAusgabenKategorienProMonth
+      },
+      {
+        inputType: InputTypes.Number,
+        label: 'Anz geplanter Ausgaben-Buchungen pro Monat:',
+        onChange: this.onAnzahlGeplanteAusgabenBuchungenProMonthChange,
+        value: this.konfigService.anzahlGeplanteAusgabenBuchungenProMonth
       }
     ];
   }

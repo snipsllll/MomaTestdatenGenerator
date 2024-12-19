@@ -1,0 +1,38 @@
+.generator {
+  width: calc(100vw - 50px);
+  height: calc(100vh - 50px);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.generator__spacer {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.generate-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.generate-button {
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 24px;
+  background-color: #7bc2fd;
+  height: 35px;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.generate-button:active {
+  background-color: #9cd5ff;
+}

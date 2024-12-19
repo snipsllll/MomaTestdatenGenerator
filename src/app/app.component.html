@@ -1,1 +1,18 @@
-<app-konfigurations></app-konfigurations>
+<div class="generator" (keydown.enter)="generate()">
+  <div class="konfiguration-wrapper">
+    <app-konfigurations></app-konfigurations>
+  </div>
+  <div class="generator__spacer">
+
+  </div>
+  <div class="generate-button-wrapper">
+    <div class="generate-button" (click)="generate()">
+      Generate
+    </div>
+  </div>
+  <div class="generate-button-wrapper">
+    <div class="generate-button" (click)="generateRandom()">
+      Random
+    </div>
+  </div>
+</div>
